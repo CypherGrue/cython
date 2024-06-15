@@ -520,6 +520,10 @@ class ExprNode(Node):
         return self._make_move_result_rhs(self.result(), optional=True)
 
     def move_result_rhs_as(self, type):
+        if self.type.is_cpp_class and (self.type.assignable_from_resolved_type(type)):
+            result = self.result()
+        else:
+            result = self.result_as(type)
         result = self.result_as(type)
         if not (type.is_reference or type.needs_refcounting):
             requires_move = type.is_rvalue_reference and self.is_temp
