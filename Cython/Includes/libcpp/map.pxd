@@ -110,6 +110,8 @@ cdef extern from "<map>" namespace "std" nogil:
         pair[iterator, bint] insert(const pair[T, U]&) except +
         iterator insert(const_iterator, const pair[T, U]&) except +
         void insert[InputIt](InputIt, InputIt) except +
+        pair[iterator, bint] emplace(...) except +
+        iterator emplace_hint(const_iterator hint, ...) except +
         #key_compare key_comp()
         iterator lower_bound(const T&)
         const_iterator const_lower_bound "lower_bound"(const T&)
@@ -234,6 +236,8 @@ cdef extern from "<map>" namespace "std" nogil:
         iterator insert(const pair[T, U]&) except +
         iterator insert(const_iterator, const pair[T, U]&) except +
         void insert[InputIt](InputIt, InputIt) except +
+        iterator emplace(...) except +
+        iterator emplace_hint(const_iterator hint, ...) except +
         #key_compare key_comp()
         iterator lower_bound(const T&)
         const_iterator const_lower_bound "lower_bound"(const T&)
