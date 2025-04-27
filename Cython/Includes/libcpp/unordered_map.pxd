@@ -173,7 +173,7 @@ cdef extern from "<unordered_map>" namespace "std" nogil:
         iterator insert(const pair[T, U]&) except +
         iterator insert(const_iterator, const pair[T, U]&) except +
         void insert[InputIt](InputIt, InputIt) except +
-        pair[iterator, bint] emplace(...) except +
+        iterator emplace(...) except +
         iterator emplace_hint(const_iterator hint, ...) except +
         #key_compare key_comp()
         iterator lower_bound(const T&)
