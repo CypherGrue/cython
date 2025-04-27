@@ -136,7 +136,7 @@ cdef extern from "<unordered_set>" namespace "std" nogil:
         const_iterator const_find "find"(const T&)
         iterator insert(const T&) except +
         iterator insert(const_iterator, const T&) except +
-        pair[iterator, bint] emplace(...) except +
+        iterator emplace(...) except +
         iterator emplace_hint(const_iterator hint, ...) except +
         void insert[InputIt](InputIt, InputIt) except +
         size_t max_size()
